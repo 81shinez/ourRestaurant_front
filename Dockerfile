@@ -8,7 +8,7 @@ ENV PATH /app/node_modules/.bin:$PATH
 ENV CHOKIDAR_USEPOLLING=true
 
 # app dependencies, install 및 caching
-ADD ./package*.json /app/package.json
+ADD ./package*.json /app/
 
 # 앱 실행
 CMD ["npm", "start"]
