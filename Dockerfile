@@ -3,6 +3,8 @@ FROM node:14.15.2
 # host /var/lib/docker/volumes/{volume_name} 에 볼륨 생성
 VOLUME /raor_dev_volume
 
+VOLUME ["/home/hshdev/jenkins/jenkins_home/workspace/OR_RA_DEV","/app"]
+
 WORKDIR /app
 
 # `/app/node_modules/.bin`을 $PATH 에 추가
@@ -13,7 +15,6 @@ ENV CHOKIDAR_USEPOLLING=true
 #ADD ./package.json /app/package.json
 #ADD ./package-lock.json /app/package-lock.json
 #ADD ./node_modules /app/node_modules
-ADD ./build /app/public
 
 RUN npm install
 #react-scripts 설치
