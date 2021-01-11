@@ -1,4 +1,4 @@
-FROM node:14.15.2-alpine
+FROM node:14.15.2
 
 # host /var/lib/docker/volumes/{volume_name} 에 볼륨 생성
 VOLUME /raor_dev_volume
