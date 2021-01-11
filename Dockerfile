@@ -14,6 +14,7 @@ ADD ./package.json /app/package.json
 ADD ./package-lock.json /app/package-lock.json
 ADD ./node_modules /app/node_modules
 
+RUN npm install
 #react-scripts 설치
 RUN npm install -g react-scripts
 
