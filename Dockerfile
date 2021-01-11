@@ -10,5 +10,8 @@ ENV CHOKIDAR_USEPOLLING=true
 # app dependencies, install 및 caching
 ADD ./package.json /package.json
 
+#react-scripts 설치
+RUN npm install -g react-scripts
+
 # 앱 실행
 CMD ["npm", "start"]
