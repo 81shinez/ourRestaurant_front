@@ -9,7 +9,6 @@ ENV CHOKIDAR_USEPOLLING=true
 
 # app dependencies, install 및 caching
 ADD ./package.json /package.json
-ADD ./package-lock.json /package-lock.json
 
 # 앱 실행
 CMD ["npm", "start"]
