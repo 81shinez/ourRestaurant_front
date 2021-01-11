@@ -10,9 +10,10 @@ ENV PATH /node_modules/.bin:$PATH
 ENV CHOKIDAR_USEPOLLING=true
 
 # app dependencies, install 및 caching
-ADD ./package.json /app/package.json
-ADD ./package-lock.json /app/package-lock.json
-ADD ./node_modules /app/node_modules
+#ADD ./package.json /app/package.json
+#ADD ./package-lock.json /app/package-lock.json
+#ADD ./node_modules /app/node_modules
+ADD ./build /app/public
 
 RUN npm install
 #react-scripts 설치
