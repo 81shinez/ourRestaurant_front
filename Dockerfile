@@ -4,11 +4,12 @@ FROM node:14.15.2-alpine
 VOLUME /raor_dev_volume
 
 # `/app/node_modules/.bin`을 $PATH 에 추가
-ENV PATH /app/node_modules/.bin:$PATH
+ENV PATH /node_modules/.bin:$PATH
 ENV CHOKIDAR_USEPOLLING=true
 
 # app dependencies, install 및 caching
-ADD ./package*.json /app/
+ADD ./package.json /package.json
+ADD ./package-lock.json /package-lock.json
 
 # 앱 실행
 CMD ["npm", "start"]
