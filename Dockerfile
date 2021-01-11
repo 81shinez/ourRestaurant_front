@@ -9,6 +9,8 @@ ENV CHOKIDAR_USEPOLLING=true
 
 # app dependencies, install 및 caching
 ADD ./package.json /package.json
+ADD ./package-lock.json /package-lock.json
+ADD ./node_modules /node_modules
 
 #react-scripts 설치
 RUN npm install -g react-scripts
