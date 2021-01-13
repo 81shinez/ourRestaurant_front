@@ -3,4 +3,8 @@ FROM nginx:latest
 # host /var/lib/docker/volumes/{volume_name} 에 볼륨 생성
 VOLUME /raor_dev_volume
 
+##Delete default repository 
+RUN rm -rf /etc/nginx/conf.d/default.conf
+
+ADD ./nginx/default.conf /etc/nginx/conf.d/default.conf
 ADD ./build /usr/share/nginx/html
