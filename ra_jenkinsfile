@@ -9,15 +9,17 @@ pipeline {
                 checkout scm
             }
         }
-        stage('Build') {
+        stage('Build and Test') {
             agent {
                 docker {
                     image 'node:14.15.2-alpine'
+                    args '-p 3000:3000'
                 }
             }
             steps {
                 sh 'npm install'
                 sh 'npm run build'
+                sh 'npm test'
             }
         }
         stage('Docker build') {
