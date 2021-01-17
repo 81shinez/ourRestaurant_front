@@ -25,16 +25,16 @@ pipeline {
         stage('Docker build') {
             agent any
             steps {
-                sh 'docker build -f Dockerfile.raor_dev -t raor_dev:latest .'
+                sh 'docker build -f Dockerfile.orra_dev -t orra_dev:latest .'
             }
         }
         stage('Docker run') {
             agent any
             steps {
-                sh 'docker ps -f name=raor_dev -q | xargs --no-run-if-empty docker container stop'
-                sh 'docker container ls -a -fname=raor_dev -q | xargs -r docker container rm'
+                sh 'docker ps -f name=orra_dev -q | xargs --no-run-if-empty docker container stop'
+                sh 'docker container ls -a -fname=orra_dev -q | xargs -r docker container rm'
                 sh 'docker images --no-trunc --all --quiet --filter="dangling=true" | xargs --no-run-if-empty docker rmi'
-                sh 'docker run -d --name raor_dev --network or_dev -p 80:80 raor_dev:latest'
+                sh 'docker run -d --name orra_dev --network or_dev -p 80:80 orra_dev:latest'
             }
         }
     }
