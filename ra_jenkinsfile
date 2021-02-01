@@ -48,7 +48,7 @@ podTemplate(label: 'builder',
                         /* namespace 존재여부 확인. 미존재시 namespace 생성 */
                         sh "kubectl get ns ${NAMESPACE}|| kubectl create ns ${NAMESPACE}"
 
-                        /* secret 존재여부 확인. 미존재시 secret 생성 */
+                        /* secret 존재여부 확인. 미존재시 secret 생성 
                         sh """
                             kubectl get secret my-secret -n ${NAMESPACE} || \
                             kubectl create secret docker-registry sr-orra-dev \
@@ -58,6 +58,7 @@ podTemplate(label: 'builder',
                             --docker-email=despiguile@gmail.com \
                             -n ${NAMESPACE}
                         """
+                        */
                         /* ra_deployment.yml 의 env값을 수정해준다(DATE로). 배포시 수정을 해주지 않으면 변경된 내용이 정상 배포되지 않는다. */
                         /*sh "echo ${VERSION}"
                         sh "sed -i.bak 's#VERSION_STRING#${VERSION}#' ./ra_deployment.yml"*/
