@@ -52,6 +52,10 @@ function App() {
     setIp(data);
   }
 
+  function callbackTime(data) {
+    setTime(data);
+  }
+
   // 첫번째 렌더링을 다 마친 후 실행합니다.
   useEffect(
     () => {
@@ -63,7 +67,7 @@ function App() {
   useEffect(
     () => {
       // 클라이언트의 IP주소를 알아내는 백엔드의 함수를 호출합니다.
-      customAxios('/getTestSql', callback);
+      customAxios('/getTestSql', callbackTime);
     }, []
   );
 
