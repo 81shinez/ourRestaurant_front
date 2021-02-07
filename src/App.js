@@ -45,6 +45,7 @@ import customAxios from './customAxios';
 function App() {
   // IP주소 변수 선언
   const [ip, setIp] = useState('');
+  const [time, setTime] = useState('');
 
   // IP주소 값을 설정합니다.
   function callback(data) {
@@ -59,11 +60,19 @@ function App() {
     }, []
   );
 
+  useEffect(
+    () => {
+      // 클라이언트의 IP주소를 알아내는 백엔드의 함수를 호출합니다.
+      customAxios('/getTestSql', callback);
+    }, []
+  );
+
   return (
     <div className="App">
       <header className="App-header">
         이 기기의 IP주소는 {ip}입니다.
       </header>
+      현재 mySql의 시간은 {time}입니다.
     </div>
   );
 }
