@@ -74,9 +74,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        이 기기의 IP주소는 {ip}입니다.
+        이 기기의 IP주소는 {ip}입니다.<br/>
+        현재 mySql의 시간은 {time}입니다.        
       </header>
-      현재 mySql의 시간은 {time}입니다.
     </div>
   );
 }
